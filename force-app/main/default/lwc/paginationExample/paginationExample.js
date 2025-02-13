@@ -14,7 +14,7 @@ export default class PaginationExample extends LightningElement {
     @track pageSize = 5
     @track pageNumber = 1
 
-    connectedCallBack()
+    connectedCallback()
     {
         this.loadAccount()
     }
@@ -23,6 +23,7 @@ export default class PaginationExample extends LightningElement {
     {
         getAccountRecords({pageSize: this.pageSize, pageNumber: this.pageNumber})
         .then((result)=>{
+            console.log('Result -----> ' + result)
             this.accountData = result
         }).catch((error)=>{
             this.error = error
@@ -38,7 +39,9 @@ export default class PaginationExample extends LightningElement {
 
     previousHandler(event)
     {
-        this.pageNumber -=1
-        this.loadAccount()
+        if(this.pageNumber >1){
+            this.pageNumber -=1
+            this.loadAccount()    
+        }
     }
 }
