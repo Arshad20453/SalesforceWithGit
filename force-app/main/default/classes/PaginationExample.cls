@@ -16,4 +16,13 @@ public with sharing class PaginationExample
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled(Cacheable=true)
+    public static List<Account> getAccRecords(){
+        try {
+            return [select id,name,type,industry from Account];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
 }
