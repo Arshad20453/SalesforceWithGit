@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_medium">
+            <lightining-datatable
+            key-field="Id"
+            data={accountData}
+            columns={columns}
+            ></lightining-datatable>
+
+            <lightning-button label="Next" variant="Brand" onclick={nextHandler}></lightning-button>
+            <lightining-button label="Previous" variant="Brand" onclick={previousHandler}></lightining-button>
+        </div>
+    </lightning-card>
+</template>
