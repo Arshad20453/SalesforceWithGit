@@ -10,7 +10,7 @@ public with sharing class PaginationExample
                            industry
                     from Account
                     ORDER BY Name
-                    LIMIT: pageLimit
+                    LIMIT: pageSize
                     OFFSET: offsetVal];
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
