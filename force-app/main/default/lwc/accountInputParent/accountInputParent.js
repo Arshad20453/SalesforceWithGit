@@ -1,7 +1,7 @@
 import { LightningElement, track } from 'lwc';
 export default class AccountInputParent extends LightningElement 
 {
-
+    // Added by Arshad as part of Wipro L2 technical round
     searchKey = ''
     accounts = []
     timeout
