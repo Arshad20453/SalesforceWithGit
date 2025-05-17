@@ -1,0 +1,28 @@
+.custom-table {
+    /* Add borders to the table */
+    border: 1px solid #d8dde6;
+    border-radius: 4px;
+}
+
+.custom-table .slds-grid {
+    /* Add borders to rows */
+    border-bottom: 1px solid #d8dde6;
+}
+
+.custom-table .slds-col {
+    /* Add borders to columns */
+    border-right: 1px solid #d8dde6;
+    padding: 0.5rem;
+}
+
+.custom-table .slds-col:last-child {
+    /* Remove border from the last column */
+    border-right: none;
+}
+
+.custom-table .slds-text-heading_label {
+    /* Style the table header */
+    font-weight: bold;
+    background-color: #f3f2f2;
+    padding: 0.5rem;
+}

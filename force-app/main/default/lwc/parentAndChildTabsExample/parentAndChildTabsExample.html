@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="General Information">
+            <lightning-tabset>
+                
+                <!-- Account Details Tab -->
+                <lightning-tab label="Account">
+                    <lightning-card title="Account Information">
+                        <lightning-record-edit-form object-api-name="Account" record-id={accountId}>
+                            
+                            <lightning-accordion allow-multiple-sections-open active-section-name="generalInfo,addressInfo">
+                                
+                                <!-- General Information Section -->
+                                <lightning-accordion-section name="generalInfo" label="General Information">
+                                    <lightning-layout multiple-rows="true">
+                                        <lightning-layout-item size="6" padding="around-small">
+                                            <lightning-input-field field-name="Name"></lightning-input-field>
+                                            <lightning-input-field field-name="Industry"></lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" padding="around-small">
+                                            <lightning-input-field field-name="Phone"></lightning-input-field>
+                                            <lightning-input-field field-name="Website"></lightning-input-field>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-accordion-section>
+        
+                                <!-- Address Section -->
+                                <lightning-accordion-section name="addressInfo" label="Address Details">
+                                    <lightning-layout multiple-rows="true">
+                                        <lightning-layout-item size="6" padding="around-small">
+                                            <lightning-input-field field-name="BillingStreet"></lightning-input-field>
+                                            <lightning-input-field field-name="BillingCity"></lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" padding="around-small">
+                                            <lightning-input-field field-name="BillingState"></lightning-input-field>
+                                            <lightning-input-field field-name="BillingCountry"></lightning-input-field>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-accordion-section>
+        
+                            </lightning-accordion>
+                            
+                            <lightning-button type="submit" label="Save"></lightning-button>
+        
+                        </lightning-record-edit-form>
+                    </lightning-card>
+                </lightning-tab>
+        
+                <!-- Contact Details Tab -->
+                <lightning-tab label="Contacts">
+                    <lightning-card title="Related Contacts">
+                        <!-- <c-contact-list account-id={accountId}></c-contact-list> -->
+                    </lightning-card>
+                </lightning-tab>
+        
+                <!-- Cases Tab -->
+                <lightning-tab label="Cases">
+                    <lightning-card title="Related Cases">
+                     <!--   <c-case-list account-id={accountId}></c-case-list> -->
+                    </lightning-card>
+                </lightning-tab>
+        
+            </lightning-tabset>
+        
+    </lightning-card>
+</template>

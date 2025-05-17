@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="Personal Loan Application">
+        <!-- Progress Indicator -->
+        <lightning-progress-indicator current-step={currentStep} type="path"  variant="base" class="slds-var-p-left_x-small">
+            <lightning-progress-step label="Eligibility" value="1"></lightning-progress-step>
+            <lightning-progress-step label="Personal Details" value="2"></lightning-progress-step>
+            <lightning-progress-step label="Income Details" value="3"></lightning-progress-step>
+            <lightning-progress-step label="Expense Details" value="4"></lightning-progress-step>
+            <lightning-progress-step label="Debt Details" value="5"></lightning-progress-step>
+        </lightning-progress-indicator>
+
+        <!-- Eligibility Section -->
+        <template if:true={isEligibility}>
+            <div class="section">
+                <h3>Eligibility Check</h3>
+                <lightning-input label="Age" type="number"></lightning-input>
+                <lightning-input label="Employment Status" type="text"></lightning-input>
+            </div>
+        </template>
+
+        <!-- Personal Details Section -->
+        <template if:true={isPersonalDetails}>
+            <div class="section">
+                <h3>Personal Details</h3>
+                <lightning-input label="Full Name"></lightning-input>
+                <lightning-input label="Email"></lightning-input>
+                <lightning-input label="Phone Number"></lightning-input>
+            </div>
+        </template>
+
+        <!-- Income Details Section -->
+        <template if:true={isIncomeDetails}>
+            <div class="section">
+                <h3>Income Details</h3>
+                <lightning-input label="Monthly Salary" type="number"></lightning-input>
+                <lightning-input label="Other Income Sources"></lightning-input>
+            </div>
+        </template>
+
+        <!-- Expense Details Section -->
+        <template if:true={isExpenseDetails}>
+            <div class="section">
+                <h3>Expense Details</h3>
+                <lightning-input label="Monthly Rent/Mortgage" type="number"></lightning-input>
+                <lightning-input label="Utility Bills"></lightning-input>
+            </div>
+        </template>
+
+        <!-- Debt Details Section -->
+        <template if:true={isDebtDetails}>
+            <div class="section">
+                <h3>Debt Details</h3>
+                <lightning-input label="Outstanding Loan Amount" type="number"></lightning-input>
+                <lightning-input label="Monthly EMI" type="number"></lightning-input>
+            </div>
+        </template>
+
+        <!-- Navigation Buttons -->
+        <div class="button-group">
+            <lightning-button label="Previous" onclick={previousStep} disabled={disablePrev}></lightning-button>
+            <lightning-button label="Next" variant="brand" onclick={nextStep} disabled={disableNext}></lightning-button>
+            <lightning-button label="Submit" variant="success" onclick={handleSubmit} if:true={isLastStep}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
